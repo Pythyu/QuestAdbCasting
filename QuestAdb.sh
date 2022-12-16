@@ -14,6 +14,10 @@ read conf
 adb tcpip 5555
 IP=$(adb shell ip route)
 
+echo "Disconnect your headset from your computer (Un-plug USB-C cable) and continue..."
+echo "Confirm(Enter):"
+read conf
+
 adb connect $IP:5555
 
 scrcpy -b 30M --crop 1440:1540:60:60
